@@ -122,8 +122,9 @@ POST Body:
 {
   "url": "https://en.wikipedia.org/wiki/Python_(programming_language)"
 }
+```
 Sample Response:
-
+```json
 {
   "title": "Python Programming Language",
   "summary": "Python is a high-level, general-purpose programming language ...",
@@ -202,7 +203,8 @@ date_generated	DateTime	Auto timestamp
 ## 🧩 Features Summary
 
 
-|:------|:-------------|
+| 🧩 Features Summary |
+|:--------------------|
 | ✅ Generate quiz from any Wikipedia link |
 | ✅ Take Quiz mode (answers hidden until submitted) |
 | ✅ Quiz history with modal view |
