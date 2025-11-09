@@ -216,9 +216,8 @@ date_generated	DateTime	Auto timestamp
 
 ---
 
-## 👨‍💻 Author
+## 👨‍💻 Author **Manoj S**  
 
-**Manoj S**  
 🎓 Full-Stack Developer  
 📧 [manojyadav23s04@gmail.com](mailto:manojyadav23s04@gmail.com)  
 🔗 [LinkedIn](https://www.linkedin.com/in/manoj-s-211a6b267/)  
