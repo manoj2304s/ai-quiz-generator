@@ -8,6 +8,11 @@ import json
 
 app = FastAPI(title="AI Wiki Quiz Generator", version="1.0")
 
+origins = [
+    "http://localhost:5173",           
+    "https://ai-quiz-generator-roan.vercel.app/" 
+]
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
