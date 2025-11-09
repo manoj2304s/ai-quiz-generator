@@ -32,9 +32,10 @@ export default function App() {
         {activeTab === "history" && <HistoryTab />}
       </main>
 
-      <footer className="footer">
-        Built with 💙 FastAPI + React
+      <footer className="text-center py-4 text-sm text-gray-500">
+        Built by Manoj S | Powered by FastAPI + Gemini + React ⚡
       </footer>
+
     </div>
   );
 }

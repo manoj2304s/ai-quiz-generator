@@ -4,6 +4,7 @@ from sqlalchemy.orm import declarative_base
 from sqlalchemy.orm import sessionmaker
 from dotenv import load_dotenv
 from sqlalchemy import Column, Integer, String, Text, DateTime, func
+from datetime import datetime
 import json
 import os
 
@@ -28,9 +29,13 @@ class Quiz(Base):
     id = Column(Integer, primary_key=True, index=True)
     url = Column(String(512), nullable=False)
     title = Column(String(256), nullable=False)
-    date_generated = Column(DateTime(timezone=True), server_default=func.now())
+    date_generated = Column(
+    DateTime(timezone=True),
+    default=datetime.utcnow,     
+    server_default=func.now(),   
+)
     scraped_content = Column(Text, nullable=True)
-    full_quiz_data = Column(Text, nullable=False)  # JSON stored as text
+    full_quiz_data = Column(Text, nullable=False) 
 
     def set_quiz_data(self, data: dict):
         """Serialize quiz data into JSON string."""

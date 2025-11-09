@@ -4,6 +4,10 @@ from bs4 import BeautifulSoup
 
 def scrape_wikipedia(url: str):
     """
+    Extracts only the main content paragraphs from Wikipedia while ignoring
+    sidebars, references, and metadata. Produces a clean and factual text base
+    for quiz generation.
+
     Fetches and cleans text content from a Wikipedia article.
     Returns: (title, clean_text)
     """
@@ -20,6 +24,10 @@ def scrape_wikipedia(url: str):
     response = requests.get(url, headers=headers)
     if response.status_code != 200:
         raise Exception(f"Failed to fetch URL: {url} | Status code: {response.status_code}")
+    if response.status_code == 403:
+        raise HTTPException(status_code=403, detail="Wikipedia blocked the request (403). Try another topic.")
+    if response.status_code != 200:
+        raise HTTPException(status_code=response.status_code, detail=f"Failed to fetch page: {url}")
 
     # ✅ Step 2: Parse HTML using BeautifulSoup
     soup = BeautifulSoup(response.text, "html.parser")

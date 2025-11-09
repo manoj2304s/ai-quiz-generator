@@ -31,8 +31,10 @@ def get_db():
 @app.post("/generate_quiz")
 def generate_quiz(data: dict, db: Session = Depends(get_db)):
     """
-    Accepts { "url": "<Wikipedia URL>" }
-    Scrapes article, generates quiz, and saves to DB.
+    Route: /generate_quiz
+    1. Scrapes content from the given Wikipedia URL.
+    2. Passes text to Gemini model to generate quiz JSON.
+    3. Saves the quiz in MySQL and returns the result.
     """
     try:
         url = data.get("url")
@@ -59,7 +61,7 @@ def generate_quiz(data: dict, db: Session = Depends(get_db)):
             "summary": quiz_data["summary"],
             "questions": quiz_data["questions"],
         }
-
+    
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
