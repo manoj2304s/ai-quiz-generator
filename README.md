@@ -46,6 +46,7 @@ backend/
 ├── main.py # FastAPI app and endpoints
 ├── requirements.txt # Python dependencies
 └── .env # Environment variables (API key, DB config)
+---
 
 ### Frontend
 frontend/
