@@ -1,0 +1,33 @@
+{
+  "title": "Artificial Intelligence",
+  "summary": "Artificial Intelligence (AI) is a branch of computer science that focuses on creating machines capable of performing tasks that typically require human intelligence. These include learning, reasoning, problem-solving, perception, and language understanding. AI applications are found in diverse fields such as healthcare, finance, robotics, and education.",
+  "questions": [
+    {
+      "question": "What does AI stand for?",
+      "options": ["Artificial Information", "Advanced Intelligence", "Artificial Intelligence", "Automated Interface"],
+      "answer": "Artificial Intelligence"
+    },
+    {
+      "question": "Which of the following is a subfield of AI?",
+      "options": ["Machine Learning", "Cyber Security", "Web Development", "Cloud Computing"],
+      "answer": "Machine Learning"
+    },
+    {
+      "question": "Which of the following tasks can AI perform?",
+      "options": ["Pattern recognition", "Data compression only", "Manual circuit wiring", "None of the above"],
+      "answer": "Pattern recognition"
+    },
+    {
+      "question": "Who is known as the father of Artificial Intelligence?",
+      "options": ["Alan Turing", "John McCarthy", "Elon Musk", "Geoffrey Hinton"],
+      "answer": "John McCarthy"
+    },
+    {
+      "question": "Which of the following industries uses AI the most?",
+      "options": ["Healthcare", "Finance", "Manufacturing", "All of the above"],
+      "answer": "All of the above"
+    }
+  ],
+  "url": "https://en.wikipedia.org/wiki/Artificial_intelligence",
+  "date_generated": "2025-11-06T17:25:00Z"
+}

@@ -16,12 +16,12 @@ parser = PydanticOutputParser(pydantic_object=QuizOutput)
 # ✅ Prompt Template (kept global for reuse)
 quiz_prompt = PromptTemplate(
     template=(
-        "You are an AI that generates educational quizzes from text.\n\n"
+        "You are an educational quiz generator.\n\n"
         "Return JSON following these format instructions exactly:\n\n"
         "{format_instructions}\n\n"
         "Article Title: {title}\n\n"
         "Article Content:\n{content}\n\n"
-        "Generate 5–10 clear, factual, multiple-choice questions."
+        "Generate 5–10 diverse, factual multiple-choice questions."
     ),
     input_variables=["title", "content"],
     partial_variables={"format_instructions": parser.get_format_instructions()},

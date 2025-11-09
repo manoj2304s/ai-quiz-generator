@@ -11,16 +11,16 @@ import os
 # Load environment variables
 load_dotenv()
 
-# ✅ Database URL Format (MySQL)
+# Database URL Format (MySQL)
 DATABASE_URL = os.getenv("DATABASE_URL", "mysql+mysqldb://root:2304@localhost:3306/quizdb")
 
-# ✅ Create Engine
+# Create Engine
 engine = create_engine(DATABASE_URL, echo=True)
 
-# ✅ Create a configured "Session" class
+# Create a configured "Session" class
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
-# ✅ Base class for models
+# Base class for models
 Base = declarative_base()
 
 class Quiz(Base):
@@ -48,7 +48,7 @@ class Quiz(Base):
         except json.JSONDecodeError:
             return {}
 
-# ✅ Create tables (only when run directly)
+# Create tables (only when run directly)
 if __name__ == "__main__":
     Base.metadata.create_all(bind=engine)
     print("✅ Database and tables created successfully.")

@@ -1,0 +1,33 @@
+{
+  "title": "Python Programming Language",
+  "summary": "Python is a high-level, interpreted programming language created by Guido van Rossum in 1991. It emphasizes code readability through the use of significant indentation and supports multiple programming paradigms, including procedural, object-oriented, and functional programming. Python’s dynamic typing and vast standard library have contributed to its popularity in data science, web development, automation, and AI.",
+  "questions": [
+    {
+      "question": "Who created the Python programming language?",
+      "options": ["Guido van Rossum", "James Gosling", "Bjarne Stroustrup", "Dennis Ritchie"],
+      "answer": "Guido van Rossum"
+    },
+    {
+      "question": "In which year was Python first released?",
+      "options": ["1989", "1991", "1995", "2000"],
+      "answer": "1991"
+    },
+    {
+      "question": "Which of the following best describes Python?",
+      "options": ["Low-level assembly language", "High-level interpreted language", "Hardware description language", "Machine code"],
+      "answer": "High-level interpreted language"
+    },
+    {
+      "question": "What is one of the key features of Python?",
+      "options": ["Manual memory management", "Significant indentation", "Compiled to binary", "No support for OOP"],
+      "answer": "Significant indentation"
+    },
+    {
+      "question": "Which organization maintains Python today?",
+      "options": ["Python Software Foundation", "Oracle", "Google", "MIT"],
+      "answer": "Python Software Foundation"
+    }
+  ],
+  "url": "https://en.wikipedia.org/wiki/Python_(programming_language)",
+  "date_generated": "2025-11-06T17:24:00Z"
+}
