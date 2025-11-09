@@ -38,6 +38,7 @@ User → React UI → FastAPI Backend → Scraper → Gemini LLM → Database (M
 ## 📁 Project Structure
 
 ### Backend
+```bash
 backend/
 ├── database.py # SQLAlchemy setup and Quiz model
 ├── models.py # Pydantic schemas for structured validation
@@ -46,9 +47,10 @@ backend/
 ├── main.py # FastAPI app and endpoints
 ├── requirements.txt # Python dependencies
 └── .env # Environment variables (API key, DB config)
----
-
+```
 ### Frontend
+
+```bash
 frontend/
 ├── src/
 │ ├── components/
@@ -62,7 +64,7 @@ frontend/
 │ ├── App.jsx
 │ └── index.css
 └── package.json
-
+```
 ---
 
 ## ⚙️ Setup Instructions
@@ -72,41 +74,51 @@ frontend/
 ```bash
 git clone https://github.com/<your-username>/ai-wiki-quiz-generator.git
 cd ai-wiki-quiz-generator
-🔹 Step 2: Backend Setup
-bash
-Copy code
+```
+
+### 🔹 Step 2: Backend Setup
+
+```bash
 cd backend
 python -m venv venv
 venv\Scripts\activate     # (Windows)
 # or
 source venv/bin/activate  # (Mac/Linux)
-
 pip install -r requirements.txt
+```
+### 🔹 Create a .env file inside backend/:
 
-
-Create a .env file inside backend/:
+```bash
 GEMINI_API_KEY=your_google_gemini_api_key
 DATABASE_URL=mysql+mysqldb://username:password@localhost/quizdb
+```
+### 🔹 Start backend:
 
-Start backend:
+```bash
 uvicorn main:app --reload
 Runs at http://127.0.0.1:8000
+```
+### 🔹 Step 3: Frontend Setup
 
-🔹 Step 3: Frontend Setup
+```bash
 cd frontend
 npm install
 npm run dev
 Runs at http://localhost:5173
+```
 
-🔗 API Endpoints
-Method	Endpoint	    Description
-POST	/generate_quiz	Accepts Wikipedia URL, scrapes article, generates quiz
-GET	    /history	    Returns all previously generated quizzes
+### 🔗 API Endpoints
+
+```bash
+Method	Endpoint	      Description
+POST	  /generate_quiz	Accepts Wikipedia URL, scrapes article, generates quiz
+GET	    /history	      Returns all previously generated quizzes
 GET	    /quiz/{quiz_id}	Returns a specific quiz by ID
+```
 
 🧾 Example Request — /generate_quiz
 POST Body:
-
+```json
 {
   "url": "https://en.wikipedia.org/wiki/Python_(programming_language)"
 }
@@ -123,8 +135,9 @@ Sample Response:
     }
   ]
 }
-
+```
 Prompt Design
+```
 quiz_prompt = PromptTemplate(
     template=(
        "You are an educational quiz generator.\n\n"
@@ -137,15 +150,17 @@ quiz_prompt = PromptTemplate(
     input_variables=["title", "content"],
     partial_variables={"format_instructions": parser.get_format_instructions()},
 )
+```
 Ensures output grounding and JSON structure, minimizing hallucination.
 
 🧪 Testing Instructions
 1️. Start Backend
+```bash
 uvicorn main:app --reload
+```
 
 2️. Open FastAPI Docs
-Visit:
-http://127.0.0.1:8000/docs
+Visit: http://127.0.0.1:8000/docs
 
 Run tests for:
 /generate_quiz → Provide Wikipedia URL
@@ -153,8 +168,10 @@ Run tests for:
 /quiz/{id} → Fetch a quiz by ID
 
 3️. Start Frontend
+```bash
 npm run dev
 Paste a Wikipedia URL → Click Generate Quiz → Check History tab.
+```
 
 Verify:
 Title, summary, and questions render
@@ -170,12 +187,14 @@ except Exception as e:
     raise HTTPException(status_code=500, detail=f"Quiz generation failed: {str(e)}")
 
 💾 Database Schema
-Field	        Type	    Description
-id	            Integer	    Primary key
-url	            String	    Wikipedia article URL
-title	        String	    Quiz title
+```bash
+Field	          Type	    Description
+id	            Integer	  Primary key
+url	            String	  Wikipedia article URL
+title	          String	  Quiz title
 full_quiz_data	Text	    Serialized JSON (Gemini output)
 date_generated	DateTime	Auto timestamp
+```
 
 🧩 Features Summary
 ✅ Generate quiz from any Wikipedia link
