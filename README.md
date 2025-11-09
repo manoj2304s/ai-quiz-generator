@@ -216,10 +216,12 @@ date_generated	DateTime	Auto timestamp
 
 ---
 
-👨‍💻 Author Manoj S 
-🎓 Full-Stack Developer
-📧 manojyadav23s04@gmail.com
-🔗 https://www.linkedin.com/in/manoj-s-211a6b267/
-🔗 https://github.com/manoj2304s
+## 👨‍💻 Author
+
+**Manoj S**  
+🎓 Full-Stack Developer  
+📧 [manojyadav23s04@gmail.com](mailto:manojyadav23s04@gmail.com)  
+🔗 [LinkedIn](https://www.linkedin.com/in/manoj-s-211a6b267/)  
+🔗 [GitHub](https://github.com/manoj2304s)
 
 ---
