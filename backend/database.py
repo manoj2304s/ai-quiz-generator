@@ -3,7 +3,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import declarative_base
 from sqlalchemy.orm import sessionmaker
 from dotenv import load_dotenv
-from sqlalchemy import Column, Integer, String, Text, DateTime, func
+from sqlalchemy import Column, Integer, String, Text, TIMESTAMP, text
 from datetime import datetime
 import json
 import os
@@ -12,7 +12,7 @@ import os
 load_dotenv()
 
 # Database URL Format (MySQL)
-DATABASE_URL = os.getenv("DATABASE_URL", "mysql+mysqldb://root:2304@localhost:3306/quizdb")
+DATABASE_URL = os.getenv("DATABASE_URL", "mysql+pymysqldb://root:2304@localhost:3306/quizdb")
 
 # Create Engine
 engine = create_engine(DATABASE_URL, echo=True)
@@ -29,11 +29,7 @@ class Quiz(Base):
     id = Column(Integer, primary_key=True, index=True)
     url = Column(String(512), nullable=False)
     title = Column(String(256), nullable=False)
-    date_generated = Column(
-    DateTime(timezone=True),
-    default=datetime.utcnow,     
-    server_default=func.now(),   
-)
+    date_generated = Column(TIMESTAMP, server_default=text("CURRENT_TIMESTAMP"))
     scraped_content = Column(Text, nullable=True)
     full_quiz_data = Column(Text, nullable=False) 
 
