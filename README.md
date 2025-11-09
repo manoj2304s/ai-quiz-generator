@@ -170,21 +170,22 @@ Run tests for:
 3️. Start Frontend
 ```bash
 npm run dev
-Paste a Wikipedia URL → Click Generate Quiz → Check History tab.
 ```
+Paste a Wikipedia URL → Click Generate Quiz → Check History tab.
 
-Verify:
+## Verify:
 Title, summary, and questions render
-
 Take Quiz mode hides answers
 History modal fetches stored data correctly
 
 ⚠️ Error Handling
+```
 Invalid Wikipedia URLs → 400 Bad Request
 Blocked requests (403) → HTTPException
 LLM output errors → Quiz generation failed: ...
 except Exception as e:
     raise HTTPException(status_code=500, detail=f"Quiz generation failed: {str(e)}")
+```
 
 💾 Database Schema
 ```bash
@@ -196,19 +197,30 @@ full_quiz_data	Text	    Serialized JSON (Gemini output)
 date_generated	DateTime	Auto timestamp
 ```
 
-🧩 Features Summary
-✅ Generate quiz from any Wikipedia link
-✅ Take Quiz mode (answers hidden until submitted)
-✅ Quiz history with modal view
-✅ Robust FastAPI backend
-✅ Clean scraping & JSON validation
-✅ MySQL persistence
-✅ Minimal, responsive UI
+---
 
-📸 Demo Screenshots inside ../Assets/screenshots/
+## 🧩 Features Summary
+
+
+|:------|:-------------|
+| ✅ Generate quiz from any Wikipedia link |
+| ✅ Take Quiz mode (answers hidden until submitted) |
+| ✅ Quiz history with modal view |
+| ✅ Robust FastAPI backend |
+| ✅ Clean scraping & JSON validation |
+| ✅ MySQL persistence |
+| ✅ Minimal, responsive UI |
+
+---
+
+## 📸 Demo Screenshots inside: ../Assets/screenshots/
+
+---
 
 👨‍💻 Author Manoj S 
 🎓 Full-Stack Developer
 📧 manojyadav23s04@gmail.com
 🔗 https://www.linkedin.com/in/manoj-s-211a6b267/
 🔗 https://github.com/manoj2304s
+
+---
