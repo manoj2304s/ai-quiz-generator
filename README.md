@@ -200,9 +200,6 @@ date_generated	DateTime	Auto timestamp
 
 ---
 
-## 🧩 Features Summary
-
-
 | 🧩 Features Summary |
 |:--------------------|
 | ✅ Generate quiz from any Wikipedia link |
