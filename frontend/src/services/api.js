@@ -1,6 +1,6 @@
 // src/services/api.js
 
-const BASE_URL = "http://127.0.0.1:8000"; // ✅ your FastAPI backend URL
+const BASE_URL = "https://ai-quiz-generator-backend-l0c0.onrender.com"; // ✅ your FastAPI backend URL
 
 // ✅ Generic fetch helper
 async function request(endpoint, options = {}) {
